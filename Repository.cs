@@ -13,7 +13,7 @@ public abstract class Repository<T>
     }
 
     /*
-        comment
+        Mapeando propriedades da tabela como Nome, Colunas e PrimaryKey.
     */
     protected Repository(string tableName, string columnsMapping, string primaryKeyName)
     {
@@ -23,7 +23,7 @@ public abstract class Repository<T>
     }
 
     /*
-        comment
+        Consulta que retorna todos os registros da tabela.
     */
     protected IEnumerable<T> FindAll()
     {
@@ -38,7 +38,9 @@ public abstract class Repository<T>
     }
 
     /*
-        comment
+        Consulta que retorna todos os registros da tabela. 
+
+        @param sql - SQL query
     */
     protected IEnumerable<T> FindAll(string sql)
     {
@@ -53,7 +55,7 @@ public abstract class Repository<T>
     }
 
     /*
-        comment
+        Conulta que retorna um único registro da tabela.
     */
     protected T Find(string sql)
     {
@@ -68,7 +70,9 @@ public abstract class Repository<T>
     }
 
     /*
-        comment
+        Consulta que retorna um único registro da tabela.
+
+        @param whereClause - Condição da consulta passada como parâmetro.
     */
     protected T FindByColumn(string whereClause)
     {
@@ -87,7 +91,9 @@ public abstract class Repository<T>
     }
 
     /*
-        comment
+        Método responsável por gravar ou atualizar dados na tabela.
+
+        @param command - SQL query (INSERT ou UPDATE) passado como parâmetro.
     */
     protected bool InsertOrUpdate(string command)
     {
@@ -99,7 +105,9 @@ public abstract class Repository<T>
     }
 
     /*
-        comment
+        Método responsável por remover um registro da tabela.
+
+        @param id - Id do registro que será apagado.
     */
     protected bool Remove(int id)
     {

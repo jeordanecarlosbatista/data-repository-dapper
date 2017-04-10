@@ -8,7 +8,7 @@ public class PersonRepository : Repository<TablePerson>
     
 
     /*
-        comment
+        Inseri uma nova pessoa
      */
 
     public bool InsertPerson(TablePerson person)
@@ -23,6 +23,9 @@ public class PersonRepository : Repository<TablePerson>
         return this.InsertOrUpdate(sql);
     }
 
+    /*
+        Atualiza pessoa
+     */
     public bool UpdatePerson(TablePerson person)
     {
         string sql = string.Format(@"UPDATE [dbo].[TablePerson]
@@ -35,14 +38,14 @@ public class PersonRepository : Repository<TablePerson>
     }
 
     /*
-       comment 
+       Recupera lista de pessoas 
      */
     public List<TablePerson> FindAllPerson() {
         return (List<TablePerson>)this.FindAll();
     }
 
     /**
-        comment
+        Recupera pessoa pela Nome
      */
     public TablePerson FindByName(string name) {
         string whereClause = String.Format(@"WHERE Name = {0}", name);
@@ -51,14 +54,14 @@ public class PersonRepository : Repository<TablePerson>
     }
 
     /*
-        comment
+        Recupera pessoa
      */
     public TablePerson FindPerson(string sql) {
         return (TablePerson)this.Find(sql);
     }
 
     /*
-        comment
+        Remove pessoa
      */
     public bool RemovePerson(int id)
     {
